@@ -1,9 +1,12 @@
-import Image from 'next/image';
-
-export default function Home() {
+import HeroSection from '@/components/HeroSection';
+import { fetchAnime } from './actions';
+async function Home() {
+    const data = await fetchAnime(1);
+    console.log(data);
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            anime valut is under development
+        <main className="max-w-4xl w-full min-h-screen py-24 mx-auto">
+            <HeroSection />
         </main>
     );
 }
+export default Home;
